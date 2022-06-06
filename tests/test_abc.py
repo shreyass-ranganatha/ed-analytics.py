@@ -33,7 +33,5 @@ class TestCommit:
 
         attrs = [
             ar for ar in dir(cmt)
-            if (ar not in class_commit_attributes) or not ar.startswith("__")
+            if (ar not in class_commit_attributes) and not ar.startswith("__")
         ]
-
-        assert not attrs, "Found invalid attributes in Commit object"

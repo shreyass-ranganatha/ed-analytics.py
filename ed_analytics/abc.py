@@ -1,6 +1,9 @@
 
 
-class Commit(dict):
+import datetime
+
+
+class Commit:
     """
     Attributes
     ----------
@@ -19,6 +22,19 @@ class Commit(dict):
     htmlURL : str
         HTML URL of the commit
     """
+
+    def __init__(self, kw):
+        self.sha = kw["sha"]
+        self.timestamp = datetime.datetime.strptime(
+            kw["commit"]["author"]["date"], "%Y-%m-%dT%H:%M:%SZ")
+        self.author = kw["author"]
+        self.author_github_username = kw["author"]["login"]
+        self.htmlURL = kw["html_url"]
+
+        self.kw = kw
+
+    def __getitem__(self, item):
+        return self.kw[item]
 
 
 class Submission:
