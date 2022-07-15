@@ -2,6 +2,7 @@ import requests
 import typing
 
 from ed_analytics.abc import Commit
+from ed_analytics.exceptions import RequestError
 
 
 class Repository:
@@ -63,6 +64,9 @@ class Repository:
                     "User-Agent": "ed-analytics.py"
                 }
             )
+
+            if res.status_code != 200:
+                raise RequestError(res.json().get("message", ""))
 
             if not (json_data := res.json()):
                 return

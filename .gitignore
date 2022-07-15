@@ -136,3 +136,4 @@ dmypy.json
 
 scratchs/*
 !scratchs/context.py
+.idea

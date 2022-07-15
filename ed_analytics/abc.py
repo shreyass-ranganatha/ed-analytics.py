@@ -36,6 +36,8 @@ class Commit:
     def __getitem__(self, item):
         return self.kw[item]
 
+    def asdict(self):
+        return self.kw
 
 class Submission:
     """Class to contain individual assignment submission operations"""
