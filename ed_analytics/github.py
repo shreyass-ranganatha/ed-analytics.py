@@ -15,7 +15,9 @@ class Repository:
     def authorise(self, oauth_token):
         self.__oauth_token: str = oauth_token
 
-    def get_commits(self, author: str = None, since: str = None, per_page: int = None, page: int = None, until: str = None) -> typing.Sequence[Commit]:
+        # TODO: verify authentication (cause verb. authorise)
+
+    def get_commits(self, author: str = None, since: str = None, per_page: int = None, page: int = None, until: str = None, failsafe: bool = False) -> typing.Sequence[Commit]:
         """
         Parameters
         ----------
@@ -72,3 +74,6 @@ class Repository:
                 return
 
             yield [Commit(cmt) for cmt in json_data]
+
+    def __str__(self):
+        return "{}/{}".format(self.owner, self.reponame)
