@@ -1,6 +1,8 @@
-# ed-analytics.py
+ed-analytics.py
+===============
 
-## `ed_analytics/abc.py`
+`ed_analytics/abc.py`
+=====================
 
 1. `class Commit` inherits `dict`
 
@@ -27,12 +29,12 @@
         GitHub REST API request to fetch commits and return them
 
         **parameters**
-        - `author: str` 
-        
+        - `author: str`
+
             query parameter of commit author
 
-        - `since: str` 
-            
+        - `since: str`
+
             since timestamp in ISO 8601 format `YYYY-MM-DDTHH:MM:SSZ`
 
         - `per_page: int`

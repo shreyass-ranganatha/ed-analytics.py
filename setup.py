@@ -4,10 +4,10 @@ from setuptools import find_packages
 import sys, os
 sys.path.insert(0, os.path.dirname(__file__))
 
-from ed_analytics.consts import AUTHOR, AUTHOR_EMAIL, DESCRIPTION, MAINTAINER, MAINTAINER_EMAIL, NAME, VERSION
+from eda.consts import AUTHOR, AUTHOR_EMAIL, DESCRIPTION, MAINTAINER, MAINTAINER_EMAIL, NAME, VERSION
 
 
-with open("README.md") as f:
+with open("README.rst") as f:
     LONG_DESCRIPTION = f.read()
 
 
